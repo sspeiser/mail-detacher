@@ -12,7 +12,11 @@ plugins {
 
     // Apply the application plugin to add support for building a CLI application.
     id 'application'
+
+	id "org.sonarqube" version "3.0"
+	id 'jacoco'
 }
+
 
 repositories {
     // Use jcenter for resolving dependencies.
@@ -31,4 +35,21 @@ dependencies {
 application {
     // Define the main class for the application.
     mainClassName = 'net.data-ops.mail-detacher.App'
+}
+
+jacoco {
+	toolVersion = "0.8.5"
+}
+jacocoTestReport {
+	reports {
+		xml.enabled true
+	}
+}
+
+sonarqube {
+  properties {
+    property "sonar.projectKey", "sspeiser_mail-detacher"
+    property "sonar.organization", "sspeiser"
+    property "sonar.host.url", "https://sonarcloud.io"
+  }
 }
