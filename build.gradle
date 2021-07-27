@@ -19,17 +19,15 @@ plugins {
 
 
 repositories {
-    // Use jcenter for resolving dependencies.
-    // You can declare any Maven/Ivy/file repository here.
-    jcenter()
+    mavenCentral()
 }
 
 dependencies {
-    // This dependency is used by the application.
-    implementation 'com.google.guava:guava:29.0-jre'
-
+    implementation 'com.sun.mail:javax.mail:1.6.2'
     // Use JUnit test framework
     testImplementation 'junit:junit:4.13'
+    testImplementation 'com.icegreen:greenmail:1.6.1'
+    testImplementation 'com.icegreen:greenmail-junit4:1.6.1'
 }
 
 application {
